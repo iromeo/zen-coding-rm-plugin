@@ -60,7 +60,7 @@ register_editor_action "ExpandZenCodingTemplate",
                        :description => "Expands Zen-Coding template for selected text or for text under cursor",
                        :shortcut => "control shift J",
                        :group => :extensions,
-                       :file_type => ["RHTML", "HAML", "CSS", "HTML", "XML"] do |editor, file|
+                       :file_type => "RHTML" do |editor, file|
   unless file.nil?
     ZenCodingAction.perform_action(editor, file)
   end
