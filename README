@@ -27,7 +27,7 @@ Installation:
 
 -------
 How To Use:
-  1. Open html, erb, xml or css file in RubyMine
+  1. Open erb, html, xml or css file in RubyMine
   2. E.g. type "div#sales>div+div.sales_header+div.sales_body+div.sales_footer" in editor
   3. Press Ctrl+Shift+J (or Tools | Extensions | Expand Zen-Coding Template)
 
