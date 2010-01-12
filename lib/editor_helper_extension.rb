@@ -25,12 +25,62 @@ class EditorWrapper
   def method_missing(name, *args, &block)
     @editor.send(name, *args, &block)
   end
-  
+
   def text
     @editor.getDocument.getText
   end
 
   def caret_offset
     @editor.caret_model.get_offset
+  end
+end
+
+class RubyEditorAction < AnAction
+  def initialize(id, options)
+    super(options[:text], options[:description], nil)
+    @id = id
+    file_types = options[:file_type]
+    @file_types = case file_types
+      when Array
+        file_types
+      when String
+       [file_types]
+      else
+       nil
+    end
+    @block = options[:block]
+    # enable in Modal dialogs, e.g. rename refactoring dialog, search, etc.
+    setEnabledInModalContext(true) if options[:enable_in_modal_context]
+  end
+
+  def actionPerformed(e)
+    project = e.get_data PlatformDataKeys::PROJECT
+    editor = e.get_data PlatformDataKeys::EDITOR
+    file = e.get_data LangDataKeys::PSI_FILE
+    ExecuteHelper.run_as_command_in_write_action(project, @id) do
+      if file
+        CommonRefactoringUtil.check_read_only_status project, file
+      end
+
+      @block.call EditorWrapper.new(editor), file
+    end
+  end
+
+  def update(e)
+    project = e.get_data PlatformDataKeys::PROJECT
+    editor = e.get_data PlatformDataKeys::EDITOR
+    file = e.get_data LangDataKeys::PSI_FILE
+    e.presentation.enabled = is_enabled(project,editor,file)
+  end
+
+  def is_enabled(project, editor, file)
+    if project.nil? or editor.nil?
+      return false
+    end
+    unless @file_types.nil?
+      return false if file.nil?
+      return false unless @file_types.inject(false) { |memo, file_type| memo || file.file_type.name == file_type }
+    end
+    true
   end
 end
