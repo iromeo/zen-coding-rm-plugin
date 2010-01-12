@@ -31,4 +31,6 @@ How To Use:
   2. E.g. type "div#sales>div+div.sales_header+div.sales_body+div.sales_footer" in editor
   3. Press Ctrl+Shift+J (or Tools | Extensions | Expand Zen-Coding Template)
 
-
+-------
+Support:
+  Ask any questions on RubyMine official forum - http://www.jetbrains.net/devnet/community/ruby
