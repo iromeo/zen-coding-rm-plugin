@@ -1,7 +1,17 @@
+This is extension for RubyMine IDE which provides simple Zen-Conding (http://code.google.com/p/zen-coding/) snippets support.
+
+----------
+Requirements:
+
+* RubyMine  >= 2.0.1
+
+----------
+Installation:
+
 1. $cd [your_favorite_directory]
-   $ git clone ... zen-conding-rm-plugin
+   $ git clone git://github.com/iromeo/zen-coding-rm-plugin.git zen-conding-rm-plugin
    $ cd zen-conding-rm-plugin
-   $ svn checkout http://zen-coding.googlecode.com/svn/trunk/zen-coding-read-only
+   $ svn checkout http://zen-coding.googlecode.com/svn/trunk/ zen-coding-read-only
 
 2. If you are using Ubuntu or MacOS go to 3)
 
@@ -15,5 +25,10 @@
    * Press "Apply"
    * Relaunch RubyMine. 
 
+-------
+How To Use:
+  1. Open html, erb, xml or css file in RubyMine
+  2. E.g. type "div#sales>div+div.sales_header+div.sales_body+div.sales_footer" in editor
+  3. Press Ctrl+Shift+J (or Tools | Extensions | Expand Zen-Coding Template)
 
 
