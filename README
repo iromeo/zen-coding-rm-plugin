@@ -1,0 +1,19 @@
+1. $cd [your_favorite_directory]
+   $ git clone ... zen-conding-rm-plugin
+   $ cd zen-conding-rm-plugin
+   $ svn checkout http://zen-coding.googlecode.com/svn/trunk/zen-coding-read-only
+
+2. If you are using Ubuntu or MacOS go to 3)
+
+   For Windows users:
+   * Install python
+   * Specify path to python executable in [your_favorite_directory]/zen-conding-rm-plugin/config.yml file
+
+3. * Launch RubyMine
+   * Open File | Settings | Extensions" dialog
+   * Press "Add" button and specify [your_favorite_directory]/zen-conding-rm-plugin/ext folder
+   * Press "Apply"
+   * Relaunch RubyMine. 
+
+
+
