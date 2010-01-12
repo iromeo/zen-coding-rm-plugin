@@ -16,11 +16,16 @@
 
 require 'editor_action_helper'
 
+# TODO - remove after RubyMine 2.0.1 final release
 class EditorWrapper
   def delete_selected_text
     EditorModificationUtil::delete_selected_text @editor
   end
 
+  def method_missing(name, *args, &block)
+    @editor.send(name, *args, &block)
+  end
+  
   def text
     @editor.getDocument.getText
   end
