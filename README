@@ -3,7 +3,7 @@ This extension for RubyMine IDE provides simple Zen-Conding (http://code.google.
 ----------
 Requirements:
 
-* RubyMine  >= 2.0.1
+* RubyMine  >= 2.0.1 rc2
 
 ----------
 Installation:
