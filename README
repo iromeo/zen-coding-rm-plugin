@@ -9,8 +9,8 @@ Requirements:
 Installation:
 
 1. $ cd [your_favorite_directory]
-   $ git clone git://github.com/iromeo/zen-coding-rm-plugin.git zen-conding-rm-plugin
-   $ cd zen-conding-rm-plugin
+   $ git clone git://github.com/iromeo/zen-coding-rm-plugin.git zen-coding-rm-plugin
+   $ cd zen-coding-rm-plugin
    $ svn checkout http://zen-coding.googlecode.com/svn/trunk zen-coding-read-only
 
 2. If you are using Ubuntu or MacOS go to 3)
